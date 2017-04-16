@@ -8,8 +8,8 @@ val jodaConvertVersion = "1.8.1"
 val jodaTimeVersion = "2.9.7"
 val kindProjectorVersion = "0.9.3"
 val parserCombinatorsVersion = "1.0.5"
-val playVersion = "2.6.0-M1"
-val scalacVersion = "2.12.1"
+val playVersion = "2.5.14"
+val scalacVersion = "2.11.8"
 val scalatestVersion = "3.2.0-SNAP3"
 val scalaXmlVersion = "1.0.6"
 
@@ -95,7 +95,6 @@ lazy val validationSettings = settings ++ dependencies ++ doPublish ++ scoverage
 
 lazy val settings = Seq(
   scalaVersion := scalacVersion,
-  crossScalaVersions := Seq("2.11.8"),
   organization := org,
   scalacOptions ++= commonScalacOptions,
   scalacOptions in (Compile, console) ~= (_ filterNot (_ == "-Ywarn-unused-import")),
