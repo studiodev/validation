@@ -1,7 +1,6 @@
-val home = "https://github.com/jto/validation"
-val repo = "git@github.com:jto/validation.git"
-val org = "io.github.jto"
-val license = ("Apache License", url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+val home = "https://github.com/studiodev/validation"
+val repo = "git@github.com:studiodev/validation.git"
+val org = "io.tabmo"
 
 val catsVersion = "0.9.0"
 val jodaConvertVersion = "1.8.1"
@@ -146,25 +145,9 @@ val generateBoilerplate = Seq(
 )
 
 val doPublish = Seq(
-  homepage := Some(url(home)),
-  scmInfo :=  Some(ScmInfo(url(home), "scm:git:" + repo)),
-  licenses := Seq(license),
-  publishMavenStyle := true,
-  publishTo := {
-    val nexus = "https://oss.sonatype.org/"
-    if (isSnapshot.value)
-      Some("snapshots" at nexus + "content/repositories/snapshots")
-    else
-      Some("releases"  at nexus + "service/local/staging/deploy/maven2")
-  },
-  pomExtra := (
-    <developers>
-      <developer>
-        <id>jto</id>
-        <name>Julien Tournay</name>
-        <url>http://jto.github.io</url>
-      </developer>
-    </developers>)
+  bintrayOrganization := Some("tabmo"),
+  licenses += ("Apache-2.0", url("http://opensource.org/licenses/Apache-2.0"))
+
 )
 
 val dontPublish = Seq(
